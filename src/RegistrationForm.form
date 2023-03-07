@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="RegistrationForm">
+  <grid id="27dc6" binding="registerPanel" layout-manager="GridLayoutManager" row-count="19" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="694" height="677"/>
+    </constraints>
+    <properties>
+      <background color="-15459519"/>
+      <enabled value="true"/>
+    </properties>
+    <border type="etched" title="Registration">
+      <font name="Monospaced" size="20" style="3"/>
+      <title-color color="-1569949"/>
+    </border>
+    <children>
+      <component id="c9b3c" class="javax.swing.JLabel" binding="lblRegister">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Segoe Script" size="48" style="1"/>
+          <foreground color="-12027717"/>
+          <text value="Register"/>
+        </properties>
+      </component>
+      <component id="338a8" class="javax.swing.JLabel" binding="lblName">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-4473925"/>
+          <font name="Fira Code Light" size="16"/>
+          <foreground color="-12027717"/>
+          <text value="Name:"/>
+        </properties>
+      </component>
+      <component id="79e8e" class="javax.swing.JTextField" binding="tfFName">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <component id="f600" class="javax.swing.JLabel" binding="lblEmail">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-4473925"/>
+          <font name="Fira Code Light" size="16"/>
+          <foreground color="-12027717"/>
+          <text value="Email:"/>
+        </properties>
+      </component>
+      <component id="a57ab" class="javax.swing.JTextField" binding="tfEmail">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <component id="59bc0" class="javax.swing.JLabel" binding="lblPhone">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-4473925"/>
+          <font name="Fira Code Light" size="16"/>
+          <foreground color="-12027717"/>
+          <text value="Phone Number:"/>
+        </properties>
+      </component>
+      <component id="49c26" class="javax.swing.JTextField" binding="tfPhone">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <component id="5b8d3" class="javax.swing.JLabel" binding="lblPassword">
+        <constraints>
+          <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-4473925"/>
+          <font name="Fira Code Light" size="16"/>
+          <foreground color="-12027717"/>
+          <text value="Password"/>
+        </properties>
+      </component>
+      <component id="3e9e1" class="javax.swing.JPasswordField" binding="pfPassword">
+        <constraints>
+          <grid row="14" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <component id="9c4f2" class="javax.swing.JLabel" binding="lblCfrmPass">
+        <constraints>
+          <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-4473925"/>
+          <font name="Fira Code Light" size="16"/>
+          <foreground color="-12027717"/>
+          <text value="Confirm Password:"/>
+        </properties>
+      </component>
+      <component id="e00b0" class="javax.swing.JPasswordField" binding="pfConfirmPassword">
+        <constraints>
+          <grid row="16" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <component id="6b3a" class="javax.swing.JButton" binding="btnRegister">
+        <constraints>
+          <grid row="18" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+          <foreground color="-12027717"/>
+          <opaque value="false"/>
+          <text value="Register"/>
+          <toolTipText value="Click To Register"/>
+        </properties>
+      </component>
+      <component id="27ed8" class="javax.swing.JButton" binding="btnCancel">
+        <constraints>
+          <grid row="18" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+          <foreground color="-12027717"/>
+          <opaque value="false"/>
+          <text value="Cancel"/>
+          <toolTipText value="Click to Cancel "/>
+        </properties>
+      </component>
+      <vspacer id="e07c2">
+        <constraints>
+          <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="a0014" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Fira Code Light" size="16"/>
+          <foreground color="-12027717"/>
+          <text value="Address:"/>
+        </properties>
+      </component>
+      <component id="e7d18" class="javax.swing.JTextField" binding="tfStreet">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <component id="38503" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <icon value="edit.png"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <vspacer id="52bc2">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="f3ad3">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="a04ee">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="9db45">
+        <constraints>
+          <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="4e173">
+        <constraints>
+          <grid row="15" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="e9abd" class="javax.swing.JTextField" binding="tfDistrict">
+        <constraints>
+          <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <component id="36720" class="javax.swing.JTextField" binding="tfPostcode">
+        <constraints>
+          <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <component id="5ea87" class="javax.swing.JTextField" binding="tfMname">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <component id="ccee3" class="javax.swing.JTextField" binding="tfLname">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+      <hspacer id="c2b52">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="7f48f" class="javax.swing.JTextField" binding="tfState">
+        <constraints>
+          <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12027717"/>
+          <font name="Fira Code Light" size="16"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
