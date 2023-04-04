@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.*;
 
 public class LoginForm extends JDialog {
@@ -11,10 +13,12 @@ public class LoginForm extends JDialog {
     private JButton btnCancel;
     private JPanel loginPanel;
     private JButton btnRegisterLogin;
+    private JLabel lblFrgtPass;
 
     public LoginForm(JFrame parent) {
         super(parent);
         setTitle("Login");
+        lblFrgtPass.setCursor(new Cursor(Cursor.HAND_CURSOR));
         Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\User\\Downloads\\money.png");
         setIconImage(icon);
         setContentPane(loginPanel);
@@ -29,7 +33,6 @@ public class LoginForm extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 String email = tfEmail.getText();
                 String password = String.valueOf(pfPassword.getPassword());
-
                 user = getAuthenticatedUser(email, password);
 
                 if (user != null) {
@@ -41,10 +44,8 @@ public class LoginForm extends JDialog {
                     "Try again",
                     JOptionPane.ERROR_MESSAGE);
                     }
-
             }
         });
-
         btnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,13 +58,21 @@ public class LoginForm extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 RegistrationForm registrationForm = new RegistrationForm(null);
                 User user = registrationForm.user;
-
                 if (user != null) {
                     JOptionPane.showMessageDialog(LoginForm.this,
                             "New user: " + user.getName(),
                             "Successful Registration",
                             JOptionPane.INFORMATION_MESSAGE);
                 }
+            }
+        });
+        lblFrgtPass.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // Open the password reset dialog
+                PasswordForm passwordForm = new PasswordForm(null);
+                passwordForm.setLocationRelativeTo(null);
+                passwordForm.setVisible(true);
             }
         });
         setVisible(true);
@@ -97,18 +106,13 @@ public class LoginForm extends JDialog {
                 user.setAddress(resultSet.getString("user_Address"));
                 user.setPassword(resultSet.getString("user_password"));
             }
-
             stmt.close();
             conn.close();
-
         }catch(Exception e){
             e.printStackTrace();
         }
-
-
         return user;
     }
-
     public static void main(String[] args) {
         LoginForm loginForm = new LoginForm(null);
         User user = loginForm.user;

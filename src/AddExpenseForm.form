@@ -78,6 +78,7 @@
             <properties>
               <background color="-12027717"/>
               <font name="Fira Code Light" size="16"/>
+              <foreground color="-1569949"/>
               <model>
                 <item value="Groceries"/>
                 <item value="Utilities"/>

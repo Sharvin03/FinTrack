@@ -16,6 +16,10 @@ public class FilterExpenses extends JFrame implements ActionListener{
     private JButton btnFilter;
     private ExpenseData expenseData;
 
+    public FilterExpenses(){
+
+    }
+
     public FilterExpenses(ExpenseData expenseData){
         setTitle("Filter Expenses");
         this.expenseData = expenseData;
@@ -32,6 +36,15 @@ public class FilterExpenses extends JFrame implements ActionListener{
         taFiltered.setText(expenseData.getFilteredExpenses(category));
         double average = expenseData.getAverageExpense(category);
         lblAvg.setText(String.format("RM%.2f", average));
+    }
+
+    public void clrMode(int response) {
+        if (response == 1){
+            pnlFilterExpenses.setBackground(Color.BLACK);
+        }
+        else{
+            pnlFilterExpenses.setBackground(Color.BLUE);
+        }
     }
     public static void main(String[] args){
         FilterExpenses filterExpenses = new FilterExpenses(null);

@@ -11,6 +11,10 @@ public class TipsForm extends JFrame{
     private JPanel pnlTips1;
     private JTextArea taTips;
 
+    public TipsForm(){
+
+    }
+
     public TipsForm(ActionListener parent){
         //super(parent);
         setTitle("Tips");
@@ -22,6 +26,7 @@ public class TipsForm extends JFrame{
         //setLocationRelativeTo(parent);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
+
 
     public static void main(String[] args) {
         TipsForm tipsForm = new TipsForm(null);

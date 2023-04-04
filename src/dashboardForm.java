@@ -2,13 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class dashboardForm extends JFrame {
+
     private JPanel dashboardPanel;
+
+    private String name;
+    private String email;
+    private String phone;
     private JLabel lblAdmin;
     private JButton addExpensesButton;
     private JButton filterExpensesButton;
@@ -17,7 +19,6 @@ public class dashboardForm extends JFrame {
     private JPanel dashboardBtnPnl;
     private JButton savingsCalculatorButton;
     private JButton logoutButton;
-
 
     public dashboardForm() {
         setTitle("Dashboard");
@@ -36,6 +37,9 @@ public class dashboardForm extends JFrame {
 
             if (user != null) {
                 lblAdmin.setText("User: " + user.getName());
+                name = user.getName();
+                email = user.getEmail();
+                phone = user.getPhone();
                 setLocationRelativeTo(null);
                 setVisible(true);
             }
@@ -81,12 +85,42 @@ public class dashboardForm extends JFrame {
         settingsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Settings settings = new Settings(this);
-                User user = settings.user;
+                Settings settings = new Settings(this,name, email, phone);
+                //User user = settings.user;
                 settings.setLocationRelativeTo(null);
                 settings.setVisible(true);
             }
         });
+        savingsCalculatorButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SavingsCalculator savingsCalculator = new SavingsCalculator(this);
+                User user = savingsCalculator.user;
+                savingsCalculator.setLocationRelativeTo(null);
+                savingsCalculator.setVisible(true);
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int response = JOptionPane.showConfirmDialog(null,"Sure? You want to exit?", "Logout",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if(response == JOptionPane.YES_OPTION){
+                    JOptionPane.showMessageDialog(null, "You have Logged Out", "Thank You", JOptionPane.INFORMATION_MESSAGE);
+                    dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Not Logged Out", "Thank You", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        });
+    }
+
+    public void clrMode(int response) {
+        if (response == 1){
+            dashboardPanel.setBackground(Color.BLACK);
+        }
+        else{
+            dashboardPanel.setBackground(Color.BLUE);
+        }
     }
 
     private boolean connectToDatabase() {
@@ -135,12 +169,11 @@ public class dashboardForm extends JFrame {
         }catch(Exception e){
             e.printStackTrace();
         }
-
         return hasRegistredUsers;
     }
 
     public static void main(String[] args) {
-        dashboardForm myForm = new dashboardForm();
+        dashboardForm myform = new dashboardForm();
     }
 
 

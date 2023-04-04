@@ -71,10 +71,6 @@ public class RegistrationForm extends JDialog {
         passwordClass = new Password(String.valueOf(pfPassword.getPassword()),String.valueOf(pfConfirmPassword.getPassword()));
         phoneClass = new Phone(tfPhone.getText());
 
-        System.out.println("FNAME: "+nameClass.getFname());
-        System.out.println("MNAME: "+nameClass.getMname());
-        System.out.println("LNAME: "+nameClass.getLname());
-
         int total = passwordClass.getPassword().length();
         int  upChars=0, lowChars=0;
         int special=0, digits=0;
@@ -140,14 +136,6 @@ public class RegistrationForm extends JDialog {
                     JOptionPane.ERROR_MESSAGE);
             return;
         }
-
-
-        System.out.println("Upchars: " + upChars);
-        System.out.println("LowChars: " + lowChars);
-        System.out.println("Digits: " + digits);
-        System.out.println("Special: " + special);
-
-
         if (!passwordClass.getPassword().equals(passwordClass.getConfirmPassword())) {
             JOptionPane.showMessageDialog(this,
                     "Confirm Password does not match",
@@ -205,7 +193,6 @@ public class RegistrationForm extends JDialog {
                 user.setAddress(finalAddress);
                 user.setPassword(finalPassword);
             }
-
             stmt.close();
             conn.close();
         }catch(Exception e){
@@ -214,7 +201,6 @@ public class RegistrationForm extends JDialog {
 
         return user;
     }
-
     public static void main(String[] args) {
         RegistrationForm myForm = new RegistrationForm(null);
         User user = myForm.user;

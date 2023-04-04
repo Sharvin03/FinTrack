@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class AddExpenseForm extends JFrame{
     private ExpenseData expenseData;
@@ -22,12 +24,14 @@ public class AddExpenseForm extends JFrame{
     private JPanel pnlExpenseDetails;
     private JButton btnFilterAdd;
 
+    public AddExpenseForm(){
+
+    }
+
     public AddExpenseForm(ActionListener parent){
         budget = Double.parseDouble(JOptionPane.showInputDialog("Please enter your budget:"));
         lblBudget.setText("RM "+budget);
         remainingBudget = budget;
-        //btnAdd.addActionListener(this);
-        //btnFilterAdd.addActionListener(this);
         expenseData = new ExpenseData();
         lblRemainingBudget.setText("RM "+remainingBudget);
         setTitle("Add Expense");
@@ -36,6 +40,7 @@ public class AddExpenseForm extends JFrame{
         setContentPane(pnlAddExpense);
         setMinimumSize(new Dimension(450, 474));
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
 
         btnAdd.addActionListener(new ActionListener() {
             @Override
@@ -65,11 +70,41 @@ public class AddExpenseForm extends JFrame{
                 //new FilterExpenses(expenseData);
             }
         });
+
     }
 
+    void changeTheme(Color color){
+        // Change color of AddExpenseForm
+        getContentPane().setBackground(color);
 
+        // Change color of all components in AddExpenseForm
+        Component[] components = getContentPane().getComponents();
+        for (Component component : components) {
+            component.setBackground(color);
+            if (component instanceof JPanel) {
+                Component[] panelComponents = ((JPanel) component).getComponents();
+                for (Component panelComponent : panelComponents) {
+                    panelComponent.setBackground(color);
+                }
+            }
+        }
+
+        // Change color of all open forms
+        for (Window window : Window.getWindows()) {
+            if (window instanceof JFrame) {
+                JFrame frame = (JFrame) window;
+                if (frame.getContentPane().getComponentCount() > 0) {
+                    Component content = frame.getContentPane().getComponent(0);
+                    if (content instanceof JPanel) {
+                        ((JPanel) content).setBackground(color);
+                    }
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         AddExpenseForm addExpenseForm = new AddExpenseForm(null);
         User user = addExpenseForm.user;
     }
+
 }

@@ -10,6 +10,10 @@ public class Name {
         this.mname = mname;
     }
 
+    public Name() {
+
+    }
+
     public String getFname() {
         return fname;
     }
